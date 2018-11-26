@@ -114,157 +114,57 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		 </div>
 	    </div>
 	  </div>
+	  <?php
+        // $host ="samcarrecmsam.mysql.db";
+        // $uname = "samcarrecmsam";
+        // $pwd = '4Carrelage';
+        // $db_name = "samcarrecmsam";
+
+        $host ="localhost";
+        $uname = "root";
+        $pwd = 'root';
+        $db_name = "samcarrecmsam";
+
+        $result = mysqli_connect($host,$uname,$pwd) or die("Could not connect to database." .mysqli_error());
+        mysqli_select_db($result,$db_name) or die("Could not select the databse." .mysqli_error());
+        $image_query = mysqli_query($result,"select url_faience, prix_faience from faience");
+        while($rows = mysqli_fetch_array($image_query))
+        {
+            $img_prix = $rows['prix_faience'];
+            $img_src = $rows['url_faience'];
+        ?>
+
+        
+
+        <?php
+        }
+    ?>
      <div class="main">
       <div class="shop_top">
 		<div class="container">
 			<div class="row shop_box-top">
 				<div class="col-md-3 shop_box"><a href="single.html">
-					<img src="images/pic5.jpg" class="img-responsive" alt=""/>
-					<span class="new-box">
+					<img src="<?php echo $img_src; ?>" class="img-responsive" alt=""/>
+					<!-- <span class="new-box">
 						<span class="new-label">New</span>
 					</span>
 					<span class="sale-box">
 						<span class="sale-label">Sale!</span>
-					</span>
+					</span> -->
 					<div class="shop_desc">
 						<h3><a href="#">aliquam volutp</a></h3>
 						<p>Lorem ipsum consectetuer adipiscing </p>
-						<span class="reducedfrom">$66.00</span>
-						<span class="actual">$12.00</span><br>
+						<!-- <span class="reducedfrom">$66.00</span> -->
+						<span class="actual"><?php echo $img_prix; ?></span><br>
 						<ul class="buttons">
 							<li class="cart"><a href="#">Add To Cart</a></li>
 							<li class="shop_btn"><a href="#">Read More</a></li>
 							<div class="clear"> </div>
 					    </ul>
 				    </div>
-				</a></div>
-				<div class="col-md-3 shop_box"><a href="single.html">
-					<img src="images/pic6.jpg" class="img-responsive" alt=""/>
-					<span class="new-box">
-						<span class="new-label">New</span>
-					</span>
-					<div class="shop_desc">
-						<h3><a href="#">aliquam volutp</a></h3>
-						<p>Lorem ipsum consectetuer adipiscing </p>
-						<span class="actual">$12.00</span><br>
-						<ul class="buttons">
-							<li class="cart"><a href="#">Add To Cart</a></li>
-							<li class="shop_btn"><a href="#">Read More</a></li>
-							<div class="clear"> </div>
-					    </ul>
-				    </div>
-				</a></div>
-				<div class="col-md-3 shop_box"><a href="single.html">
-					<img src="images/pic7.jpg" class="img-responsive" alt=""/>
-					<span class="new-box">
-						<span class="new-label">New</span>
-					</span>
-					<span class="sale-box">
-						<span class="sale-label">Sale!</span>
-					</span>
-					<div class="shop_desc">
-						<h3><a href="#">aliquam volutp</a></h3>
-						<p>Lorem ipsum consectetuer adipiscing </p>
-						<span class="reducedfrom">$66.00</span>
-						<span class="actual">$12.00</span><br>
-						<ul class="buttons">
-							<li class="cart"><a href="#">Add To Cart</a></li>
-							<li class="shop_btn"><a href="#">Read More</a></li>
-							<div class="clear"> </div>
-					    </ul>
-				    </div>
-				</a></div>
-				<div class="col-md-3 shop_box"><a href="single.html">
-					<img src="images/pic8.jpg" class="img-responsive" alt=""/>
-					<span class="new-box">
-						<span class="new-label">New</span>
-					</span>
-					<div class="shop_desc">
-						<h3><a href="#">aliquam volutp</a></h3>
-						<p>Lorem ipsum consectetuer adipiscing </p>
-						<span class="reducedfrom">$66.00</span>
-						<span class="actual">$12.00</span><br>
-						<ul class="buttons">
-							<li class="cart"><a href="#">Add To Cart</a></li>
-							<li class="shop_btn"><a href="#">Read More</a></li>
-							<div class="clear"> </div>
-					    </ul>
-				    </div>
-				</a></div>
+				</a>
 			</div>
-			<div class="row">
-				<div class="col-md-3 shop_box"><a href="single.html">
-					<img src="images/pic9.jpg" class="img-responsive" alt=""/>
-					<span class="new-box">
-						<span class="new-label">New</span>
-					</span>
-					<div class="shop_desc">
-						<h3><a href="#">aliquam volutp</a></h3>
-						<p>Lorem ipsum consectetuer adipiscing </p>
-						<span class="actual">$12.00</span><br>
-						<ul class="buttons">
-							<li class="cart"><a href="#">Add To Cart</a></li>
-							<li class="shop_btn"><a href="#">Read More</a></li>
-							<div class="clear"> </div>
-					    </ul>
-				    </div>
-				</a></div>
-				<div class="col-md-3 shop_box"><a href="single.html">
-					<img src="images/pic10.jpg" class="img-responsive" alt=""/>
-					<span class="new-box">
-						<span class="new-label">New</span>
-					</span>
-					<span class="sale-box">
-						<span class="sale-label">Sale!</span>
-					</span>
-					<div class="shop_desc">
-						<h3><a href="#">aliquam volutp</a></h3>
-						<p>Lorem ipsum consectetuer adipiscing </p>
-						<span class="actual">$12.00</span><br>
-						<ul class="buttons">
-							<li class="cart"><a href="#">Add To Cart</a></li>
-							<li class="shop_btn"><a href="#">Read More</a></li>
-							<div class="clear"> </div>
-					    </ul>
-				    </div>
-				</a></div>
-				<div class="col-md-3 shop_box"><a href="single.html">
-					<img src="images/pic11.jpg" class="img-responsive" alt=""/>
-					<span class="new-box">
-						<span class="new-label">New</span>
-					</span>
-					<div class="shop_desc">
-						<h3><a href="#">aliquam volutp</a></h3>
-						<p>Lorem ipsum consectetuer adipiscing </p>
-						<span class="reducedfrom">$66.00</span>
-						<span class="actual">$12.00</span><br>
-						<ul class="buttons">
-							<li class="cart"><a href="#">Add To Cart</a></li>
-							<li class="shop_btn"><a href="#">Read More</a></li>
-							<div class="clear"> </div>
-					    </ul>
-				    </div>
-				</a></div>
-				<div class="col-md-3 shop_box"><a href="single.html">
-					<img src="images/pic12.jpg" class="img-responsive" alt=""/>
-					<span class="new-box">
-						<span class="new-label">New</span>
-					</span>
-					<span class="sale-box">
-						<span class="sale-label">Sale!</span>
-					</span>
-					<div class="shop_desc">
-						<h3><a href="#">aliquam volutp</a></h3>
-						<p>Lorem ipsum consectetuer adipiscing </p>
-						<span class="reducedfrom">$66.00</span>
-						<span class="actual">$12.00</span><br>
-						<ul class="buttons">
-							<li class="cart"><a href="#">Add To Cart</a></li>
-							<li class="shop_btn"><a href="#">Read More</a></li>
-							<div class="clear"> </div>
-					    </ul>
-				    </div>
-				</a></div>
+				
 			</div>
 		 </div>
 	   </div>

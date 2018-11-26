@@ -65,8 +65,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					 <div class="menu">
 						  <a class="toggleMenu" href="#"><img src="images/nav.png" alt="" /></a>
 						    <ul class="nav" id="nav">
-								<li><a href="shop.html">Faience</a></li>
-						    	<li><a href="shop.html">Shop</a></li>
+								<li><a href="showpictures.php">Faience</a></li>
+						    	<li><a href="shop.php">Shop</a></li>
 						    	<li><a href="team.html">Team</a></li>
 						    	<li><a href="experiance.html">Events</a></li>
 						    	<li><a href="experiance.html">Experiance</a></li>

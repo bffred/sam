@@ -21,9 +21,14 @@
         <h3>Showing Images from database</h3>
         <div class="img-box">
     <?php
-        $host ="samcarrecmsam.mysql.db";
-        $uname = "samcarrecmsam";
-        $pwd = '4Carrelage';
+        // $host ="samcarrecmsam.mysql.db";
+        // $uname = "samcarrecmsam";
+        // $pwd = '4Carrelage';
+        // $db_name = "samcarrecmsam";
+
+        $host ="localhost";
+        $uname = "root";
+        $pwd = 'root';
         $db_name = "samcarrecmsam";
 
         $result = mysqli_connect($host,$uname,$pwd) or die("Could not connect to database." .mysqli_error());
