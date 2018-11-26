@@ -116,15 +116,15 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	  </div>
 	  <div class="border">
 	  <?php
-        // $host ="samcarrecmsam.mysql.db";
-        // $uname = "samcarrecmsam";
-        // $pwd = '4Carrelage';
-        // $db_name = "samcarrecmsam";
-
-        $host ="localhost";
-        $uname = "root";
-        $pwd = 'root';
+        $host ="samcarrecmsam.mysql.db";
+        $uname = "samcarrecmsam";
+        $pwd = '4Carrelage';
         $db_name = "samcarrecmsam";
+
+        // $host ="localhost";
+        // $uname = "root";
+        // $pwd = 'root';
+        // $db_name = "samcarrecmsam";
 
         $result = mysqli_connect($host,$uname,$pwd) or die("Could not connect to database." .mysqli_error());
         mysqli_select_db($result,$db_name) or die("Could not select the databse." .mysqli_error());
