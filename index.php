@@ -60,7 +60,7 @@
 							<a class="toggleMenu" href="#"><img src="images/nav.png" alt="" /></a>
 							<ul class="nav" id="nav">
 								<li><a href="index.php">Home</a></li>
-								<li><a href="shop.php">Faience</a></li>
+								<li><a href="Faience.php">Faience</a></li>
 								<li><a href="Mosaique.php">Mosaique</a></li>
 								<li><a href="team.html">Team</a></li>
 								<li><a href="experiance.html">Events</a></li>
