@@ -59,23 +59,24 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<div class="row">
 			  <div class="col-md-12">
 				 <div class="header-left">
-					 <div class="logo">
-						<a href="index.html"><img src="images/logo.png" alt=""/></a>
-					 </div>
-					 <div class="menu">
-						  <a class="toggleMenu" href="#"><img src="images/nav.png" alt="" /></a>
-						    <ul class="nav" id="nav">
+					<div class="logo">
+					<a href="index.html"><img src="images/logo.png" alt=""/></a>
+					</div>
+						<div class="menu">
+							<a class="toggleMenu" href="#"><img src="images/nav.png" alt="" /></a>
+							<ul class="nav" id="nav">
 								<li><a href="index.php">Home</a></li>
-						    	<li><a href="shop.php">Shop</a></li>
-						    	<li><a href="team.html">Team</a></li>
-						    	<li><a href="experiance.html">Events</a></li>
-						    	<li><a href="shop.html">Company</a></li>
+								<li><a href="shop.php">Faience</a></li>
+								<li><a href="Mosaique.php">Mosaique</a></li>
+								<li><a href="team.html">Team</a></li>
+								<li><a href="experiance.html">Events</a></li>
+								<li><a href="shop.html">Company</a></li>
 								<li><a href="contact.html">Contact</a></li>								
 								<div class="clear"></div>
 							</ul>
 							<script type="text/javascript" src="js/responsive-nav.js"></script>
-				    </div>							
-	    		    <div class="clear"></div>
+						</div>							
+					<div class="clear"></div>
 	    	    </div>
 	            <div class="header_right">
 	    		  <!-- start search-->
@@ -216,16 +217,16 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="container">
 			<h3 class="m_3">Features</h3>
 			<div class="close_but"><i class="close1"> </i></div>
-			  <div class="row">
+			  	<div class="row">
 				<div class="col-md-3 top_box">
-				  <div class="view view-ninth"><a href="single.html">
-                    <img src="images/pic1.jpg" class="img-responsive" alt=""/>
-                    <div class="mask mask-1"> </div>
-                    <div class="mask mask-2"> </div>
-                      <div class="content">
-                        <h2>Hover Style #9</h2>
-                        <p>Lorem ipsum dolor sit amet, consectetuer adipiscing.</p>
-                      </div>
+				  	<div class="view view-ninth"><a href="single.html">
+						<img src="images/pic1.jpg" class="img-responsive" alt=""/>
+						<div class="mask mask-1"> </div>
+						<div class="mask mask-2"> </div>
+                		<div class="content">
+                        	<h2>Hover Style #9</h2>
+                        	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing.</p>
+                      	</div>
                    </a> </div
                   </div>
                   <h4 class="m_4"><a href="#">nostrud exerci ullamcorper</a></h4>

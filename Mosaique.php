@@ -60,9 +60,9 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						  <a class="toggleMenu" href="#"><img src="images/nav.png" alt="" /></a>
 						    <ul class="nav" id="nav">
 								<li><a href="index.php">Home</a></li>
-						    	<li class="current"><a href="shop.php">Faience</a></li>
-								<li><a href="Mosaique.php">Mosaique</a></li>
-						    	<li><a href="team.html">Team</a></li>
+						    	<li><a href="Faience.php">Faience</a></li>
+						    	<li class="current"><a href="Mosaique.php">Mosaique</a></li>
+								<li><a href="team.html">Team</a></li>
 						    	<li><a href="experiance.html">Events</a></li>
 						    	<li><a href="shop.html">Company</a></li>
 								<li><a href="contact.html">Contact</a></li>								
@@ -129,11 +129,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
         $result = mysqli_connect($host,$uname,$pwd) or die("Could not connect to database." .mysqli_error());
         mysqli_select_db($result,$db_name) or die("Could not select the databse." .mysqli_error());
-        $image_query = mysqli_query($result,"select url_faience, prix_faience from faience");
+        $image_query = mysqli_query($result,"select url_mosaique, prix_mosaique from mosaique");
         while($rows = mysqli_fetch_array($image_query))
         {
-            $img_prix = $rows['prix_faience'];
-            $img_src = $rows['url_faience'];
+            $img_prix = $rows['prix_mosaique'];
+            $img_src = $rows['url_mosaique'];
         ?>
 			<div class="main">
 			<div class="shop_top">
