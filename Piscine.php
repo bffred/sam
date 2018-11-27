@@ -60,13 +60,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						  <a class="toggleMenu" href="#"><img src="images/nav.png" alt="" /></a>
 						    <ul class="nav" id="nav">
 								<li><a href="index.php">Home</a></li>
-						    	<li class="current"><a href="Faience.php">Faience</a></li>
-								<li><a href="Mosaique.php">Mosaique</a></li>
-								<li><a href="Piscine.php">Piscine</a></li>
+						    	<li><a href="Faience.php">Faience</a></li>
+						    	<li><a href="Mosaique.php">Mosaique</a></li>
+								<li class="current"><a href="Piscine.php">Piscine</a></li>
 								<li><a href="Sallebain.php">Salle de bain</a></li>
 								<li><a href="SolInt.php">Sol Interieur</a></li>
 								<li><a href="SolExt.php">Sol Exterieur</a></li>
-						    	<li><a href="team.html">Team</a></li>
+								<li><a href="team.html">Team</a></li>
 						    	<li><a href="experiance.html">Events</a></li>
 						    	<li><a href="shop.html">Company</a></li>
 								<li><a href="contact.html">Contact</a></li>								
@@ -121,7 +121,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	  </div>
 	  <div class="border">
 	  <?php
-
         // $host ="samcarrecmsam.mysql.db";
         // $uname = "samcarrecmsam";
         // $pwd = '4Carrelage';
@@ -132,17 +131,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
         $pwd = '';
         $db_name = "samcarrecmsam";
 
-					
         $result = mysqli_connect($host,$uname,$pwd) or die("Could not connect to database." .mysqli_error());
-        mysqli_select_db($result , $db_name) or die("Could not select the databse." .mysqli_error());
-		
-		$image_query = mysqli_query($result,"select url_faience, prix_faience from faience");
+        mysqli_select_db($result,$db_name) or die("Could not select the databse." .mysqli_error());
+        $image_query = mysqli_query($result,"select url_piscine, prix_piscine from piscine");
         while($rows = mysqli_fetch_array($image_query))
         {
-            $img_prix = $rows['prix_faience'];
-			$img_src = $rows['url_faience'];
-			
-
+            $img_prix = $rows['prix_piscine'];
+            $img_src = $rows['url_piscine'];
         ?>
 			<div class="main">
 			<div class="shop_top">

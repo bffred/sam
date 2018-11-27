@@ -60,14 +60,18 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			  <div class="col-md-12">
 				 <div class="header-left">
 					<div class="logo">
-					<a href="index.html"><img src="images/logo.png" alt=""/></a>
+					<a href="index.php"><img src="images/logo.png" alt=""/></a>
 					</div>
 						<div class="menu">
 							<a class="toggleMenu" href="#"><img src="images/nav.png" alt="" /></a>
 							<ul class="nav" id="nav">
-								<li><a href="index.php">Home</a></li>
+								<li class="current"><a href="index.php">Home</a></li>
 								<li><a href="Faience.php">Faience</a></li>
 								<li><a href="Mosaique.php">Mosaique</a></li>
+								<li><a href="Piscine.php">Piscine</a></li>
+								<li><a href="Sallebain.php">Salle de bain</a></li>
+								<li><a href="SolInt.php">Sol Interieur</a></li>
+								<li><a href="SolExt.php">Sol Exterieur</a></li>
 								<li><a href="team.html">Team</a></li>
 								<li><a href="experiance.html">Events</a></li>
 								<li><a href="shop.html">Company</a></li>

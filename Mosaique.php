@@ -62,6 +62,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 								<li><a href="index.php">Home</a></li>
 						    	<li><a href="Faience.php">Faience</a></li>
 						    	<li class="current"><a href="Mosaique.php">Mosaique</a></li>
+								<li><a href="Piscine.php">Picsine</a></li>
+								<li><a href="Sallebain.php">Salle de bain</a></li>
+								<li><a href="SolInt.php">Sol Interieur</a></li>
+								<li><a href="SolExt.php">Sol Exterieur</a></li>
 								<li><a href="team.html">Team</a></li>
 						    	<li><a href="experiance.html">Events</a></li>
 						    	<li><a href="shop.html">Company</a></li>
