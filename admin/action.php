@@ -2,7 +2,7 @@
 //action.php
 if(isset($_POST["action"]))
 {
- $connect = mysqli_connect("localhost", "root","", "samcarrecmsam");
+ $connect = mysqli_connect("localhost", "root", "root", "samcarrecmsam");
  if($_POST["action"] == "fetch")
  {
   $query = "SELECT * FROM piscine ORDER BY id DESC"; //LIMIT 10
@@ -39,27 +39,27 @@ if(isset($_POST["action"]))
  if($_POST["action"] == "insert")
  {
   $file = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));
-  $query = "INSERT INTO tbl_images(name) VALUES ('$file')";
+  $query = "INSERT INTO piscine(name) VALUES ('$file')";
   if(mysqli_query($connect, $query))
   {
-   echo 'Image Inserted into Database';
+   echo 'Image ajouté';
   }
  }
  if($_POST["action"] == "update")
  {
   $file = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));
-  $query = "UPDATE tbl_images SET name = '$file' WHERE id = '".$_POST["image_id"]."'";
+  $query = "UPDATE piscine SET name = '$file' WHERE id = '".$_POST["image_id"]."'";
   if(mysqli_query($connect, $query))
   {
-   echo 'Image Updated into Database';
+   echo 'Image modifié';
   }
  }
  if($_POST["action"] == "delete")
  {
-  $query = "DELETE FROM tbl_images WHERE id = '".$_POST["image_id"]."'";
+  $query = "DELETE FROM piscine WHERE id = '".$_POST["image_id"]."'";
   if(mysqli_query($connect, $query))
   {
-   echo 'Image Deleted from Database';
+   echo 'Article supprimé';
   }
  }
 }
