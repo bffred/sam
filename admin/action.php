@@ -26,9 +26,7 @@ if(isset($_POST["action"]))
      <td>
       <img src="../'.($row['url_piscine'] ).'" height="60" width="75" class="img-thumbnail" />
      </td>
-     <td>
-     
-     </td>
+     <td> ' .$row['prix_piscine'].'</td>
      <td><button type="button" name="update" class="btn btn-warning bt-xs update" id="'.$row["id"].'">Change</button></td>
      <td><button type="button" name="delete" class="btn btn-danger bt-xs delete" id="'.$row["id"].'">Remove</button></td>
     </tr>
