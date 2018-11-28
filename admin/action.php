@@ -12,6 +12,7 @@ if(isset($_POST["action"]))
     <tr>
      <th width="10%">ID</th>
      <th width="70%">Image</th>
+     <th width="70%">Prix</th>
      <th width="10%">Change</th>
      <th width="10%">Remove</th>
     </tr>
@@ -25,6 +26,7 @@ if(isset($_POST["action"]))
      <td>
       <img src="./images/mosaic,'.base64_encode($row['url_faience'] ).'" height="60" width="75" class="img-thumbnail" />
      </td>
+     <td></td>
      <td><button type="button" name="update" class="btn btn-warning bt-xs update" id="'.$row["id"].'">Change</button></td>
      <td><button type="button" name="delete" class="btn btn-danger bt-xs delete" id="'.$row["id"].'">Remove</button></td>
     </tr>
