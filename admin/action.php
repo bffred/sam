@@ -10,11 +10,11 @@ if(isset($_POST["action"]))
   $output = '
    <table class="table table-bordered table-striped">  
     <tr>
-     <th width="10%">ID</th>
-     <th width="70%">Image</th>
-     <th width="70%">Prix</th>
-     <th width="10%">Change</th>
-     <th width="10%">Remove</th>
+     <th width="10%" class="text-center">ID</th>
+     <th width="70%" class="text-center">Image</th>
+     <th width="70%" class="text-center">Prix</th>
+     <th width="10%" class="text-center">Modifier</th>
+     <th width="10%" class="text-center">Supprimer</th>
     </tr>
   ';
   while($row = mysqli_fetch_array($result))
@@ -22,13 +22,13 @@ if(isset($_POST["action"]))
    $output .= '
 
     <tr>
-     <td>'.$row["id"].'</td>
-     <td>
+     <td class="text-center">'.$row["id"].'</td>
+     <td class="text-center">
       <img src="../'.($row['url_piscine'] ).'" height="60" width="75" class="img-thumbnail" />
      </td>
-     <td> ' .$row['prix_piscine'].'</td>
-     <td><button type="button" name="update" class="btn btn-primary bt-xs update" id="'.$row["id"].'">Modifier</button></td>
-     <td><button type="button" name="delete" class="btn btn-danger bt-xs delete" id="'.$row["id"].'">Supprimer</button></td>
+     <td class="text-center"> ' .$row['prix_piscine'].'</td>
+     <td class="text-center"><button type="button" name="update" class="btn btn-primary bt-xs update" id="'.$row["id"].'">Modifier</button></td>
+     <td class="text-center"><button type="button" name="delete" class="btn btn-danger bt-xs delete" id="'.$row["id"].'">Supprimer</button></td>
     </tr>
    ';
   }

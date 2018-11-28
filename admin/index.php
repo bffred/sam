@@ -13,6 +13,17 @@
    <br />
    <div align="right">
     <button type="button" name="add" id="add" class="btn btn-success">Ajouter</button>
+    <ul class="nav nav-tabs">
+        <li class="nav-item">
+            <a class="nav-link active" href="#">Piscine</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Exterieur</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Interieur</a>
+        </li>
+        </ul>
    </div>
    <br />
    <div id="image_data">
@@ -21,7 +32,6 @@
   </div>  
  </body>  
 </html>
-
 <div id="imageModal" class="modal fade" role="dialog">
  <div class="modal-dialog">
   <div class="modal-content">
@@ -78,7 +88,7 @@ $(document).ready(function(){
   var image_name = $('#image').val();
   if(image_name == '')
   {
-   alert("Please Select Image");
+   alert("Veuillez selectionner une image");
    return false;
   }
   else
@@ -112,7 +122,7 @@ $(document).ready(function(){
  $(document).on('click', '.update', function(){
   $('#image_id').val($(this).attr("id"));
   $('#action').val("update");
-  $('.modal-title').text("Update Image");
+  $('.modal-title').text("Changer Image");
   $('#insert').val("Update");
   $('#imageModal').modal("show");
  });
