@@ -24,11 +24,11 @@ if(isset($_POST["action"]))
     <tr>
      <td>'.$row["id"].'</td>
      <td>
-      <img src="../'.($row['url_piscine'] ).'" class="img-thumbnail" /> //height="60" width="75"
+      <img src="../'.($row['url_piscine'] ).'" height="60" width="75" class="img-thumbnail" />
      </td>
      <td> ' .$row['prix_piscine'].'</td>
-     <td><button type="button" name="update" class="btn btn-warning bt-xs update" id="'.$row["id"].'">Change</button></td>
-     <td><button type="button" name="delete" class="btn btn-danger bt-xs delete" id="'.$row["id"].'">Remove</button></td>
+     <td><button type="button" name="update" class="btn btn-primary bt-xs update" id="'.$row["id"].'">Modifier</button></td>
+     <td><button type="button" name="delete" class="btn btn-danger bt-xs delete" id="'.$row["id"].'">Supprimer</button></td>
     </tr>
    ';
   }

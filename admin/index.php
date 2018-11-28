@@ -9,10 +9,10 @@
  <body>  
   <br /><br />  
   <div class="container" style="width:900px;">  
-   <h3 align="center">Sam Carrelage | Adminitration</h3>  
+   <h3 align="center">Sam Carrelage | Administration</h3>  
    <br />
    <div align="right">
-    <button type="button" name="add" id="add" class="btn btn-success">Add</button>
+    <button type="button" name="add" id="add" class="btn btn-success">Ajouter</button>
    </div>
    <br />
    <div id="image_data">
@@ -27,11 +27,11 @@
   <div class="modal-content">
    <div class="modal-header">
     <button type="button" class="close" data-dismiss="modal">&times;</button>
-    <h4 class="modal-title">Add Image</h4>
+    <h4 class="modal-title">Ajouter Image</h4>
    </div>
    <div class="modal-body">
     <form id="image_form" method="post" enctype="multipart/form-data">
-     <p><label>Select Image</label>
+     <p><label>Selectioner Image</label>
      <input type="file" name="image" id="image" /></p><br />
      <input type="hidden" name="action" id="action" value="insert" />
      <p><label>Prix</label><br>
@@ -41,7 +41,7 @@
     </form>
    </div>
    <div class="modal-footer">
-    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+    <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
    </div>
   </div>
  </div>
