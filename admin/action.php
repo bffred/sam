@@ -39,7 +39,7 @@ if(isset($_POST["action"]))
  if($_POST["action"] == "insert")
  {
   $file = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));
-  $query = "INSERT INTO tbl_images(name) VALUES ('$file')";
+  $query = "INSERT INTO piscine(url_piscine) VALUES ('$file')";
   if(mysqli_query($connect, $query))
   {
    echo 'Image Inserted into Database';
