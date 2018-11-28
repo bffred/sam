@@ -2,7 +2,7 @@
 //action.php
 if(isset($_POST["action"]))
 {
- $connect = mysqli_connect("localhost", "root", "root", "samcarrecmsam");
+ $connect = mysqli_connect("localhost", "root","", "samcarrecmsam");
  if($_POST["action"] == "fetch")
  {
   $query = "SELECT * FROM piscine ORDER BY id DESC"; //LIMIT 10
