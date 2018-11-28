@@ -23,7 +23,7 @@ if(isset($_POST["action"]))
     <tr>
      <td>'.$row["id"].'</td>
      <td>
-      <img src="images/mosaic,'.base64_encode($row['name'] ).'" height="60" width="75" class="img-thumbnail" />
+      <img src="./images/mosaic,'.base64_encode($row['url_faience'] ).'" height="60" width="75" class="img-thumbnail" />
      </td>
      <td><button type="button" name="update" class="btn btn-warning bt-xs update" id="'.$row["id"].'">Change</button></td>
      <td><button type="button" name="delete" class="btn btn-danger bt-xs delete" id="'.$row["id"].'">Remove</button></td>
