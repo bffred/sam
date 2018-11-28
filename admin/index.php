@@ -34,9 +34,10 @@
      <p><label>Select Image</label>
      <input type="file" name="image" id="image" /></p><br />
      <input type="hidden" name="action" id="action" value="insert" />
+     <p><label>Prix</label><br>
+		<input /><span> €</span><br><br>
      <input type="hidden" name="image_id" id="image_id" />
      <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-info" />
-      
     </form>
    </div>
    <div class="modal-footer">
