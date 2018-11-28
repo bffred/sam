@@ -2,7 +2,7 @@
 //action.php
 if(isset($_POST["action"]))
 {
- $connect = mysqli_connect("localhost", "root", "root", "samcarrecmsam");
+ $connect = mysqli_connect("localhost", "root", "", "samcarrecmsam");
  if($_POST["action"] == "fetch")
  {
   $query = "SELECT * FROM piscine ORDER BY id DESC"; //LIMIT 10
@@ -24,7 +24,7 @@ if(isset($_POST["action"]))
     <tr>
      <td>'.$row["id"].'</td>
      <td>
-      <img src="./images/mosaic,'.base64_encode($row['url_faience'] ).'" height="60" width="75" class="img-thumbnail" />
+      <img src="../'.($row['url_piscine'] ).'" height="60" width="75" class="img-thumbnail" />
      </td>
      <td></td>
      <td><button type="button" name="update" class="btn btn-warning bt-xs update" id="'.$row["id"].'">Change</button></td>
