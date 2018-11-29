@@ -66,6 +66,7 @@
 								<li><a href="Sallebain.php">Salle de bain</a></li>
 								<li><a href="SolInt.php">Sol Interieur</a></li>
 								<li><a href="SolExt.php">Sol Exterieur</a></li>
+								<li><a href="ColleJoints.php">Colle et Joints</a></li>
 								<li><a href="/admin">Admin</a></li>
 								<li><a href="experiance.html">Events</a></li>
 								<li><a href="shop.html">Company</a></li>

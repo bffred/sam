@@ -61,12 +61,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						    <ul class="nav" id="nav">
 								<li><a href="index.php">Home</a></li>
 						    	<li><a href="Faience.php">Faience</a></li>
-						    	<li class="current"><a href="Mosaique.php">Mosaique</a></li>
-								<li><a href="Piscine.php">Picsine</a></li>
+						    	<li><a href="Mosaique.php">Mosaique</a></li>
+								<li><a href="Piscine.php">Piscine</a></li>
 								<li><a href="Sallebain.php">Salle de bain</a></li>
 								<li><a href="SolInt.php">Sol Interieur</a></li>
 								<li><a href="SolExt.php">Sol Exterieur</a></li>
-								<li><a href="ColleJoints.php">Colle et Joints</a></li>
+								<li class="current"><a href="ColleJoints.php">Colle et Joints</a></li>
 								<li><a href="team.html">Team</a></li>
 						    	<li><a href="experiance.html">Events</a></li>
 						    	<li><a href="shop.html">Company</a></li>
@@ -122,7 +122,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	  </div>
 	  <div class="border">
 	  <?php
-	  
+
         // $host ="samcarrecmsam.mysql.db";
         // $uname = "samcarrecmsam";
         // $pwd = '4Carrelage';
@@ -135,11 +135,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 
         $result = mysqli_connect($host,$uname,$pwd) or die("Could not connect to database." .mysqli_error());
         mysqli_select_db($result,$db_name) or die("Could not select the databse." .mysqli_error());
-        $image_query = mysqli_query($result,"select url_mosaique, prix_mosaique from mosaique");
+        $image_query = mysqli_query($result,"select url_collejoints, prix_collejoints from collejooints");
         while($rows = mysqli_fetch_array($image_query))
         {
-            $img_prix = $rows['prix_mosaique'];
-            $img_src = $rows['url_mosaique'];
+            $img_prix = $rows['prix_collejoints'];
+            $img_src = $rows['url_collejoints'];
         ?>
 			<div class="main">
 			<div class="shop_top">
@@ -172,7 +172,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<option>6</option>
 										</select>
 									</li>
-									<li class="shop_btn"><br><button href="single.html">Détails</button></li>
 									<li class="cart"><br><button href="#">Ajouter au panier</button></li>
 									<div class="clear"> </div>
 								</ul><br>
