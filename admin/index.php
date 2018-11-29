@@ -130,7 +130,7 @@ $(document).ready(function(){
  $(document).on('click', '.delete', function(){
   var image_id = $(this).attr("id");
   var action = "delete";
-  if(confirm("Are you sure you want to remove this image from database?"))
+  if(confirm("Etes-vous vraiment sur de vouloir supprimer cet article"))
   {
    $.ajax({
     url:"action.php",
