@@ -85,6 +85,7 @@ $(document).ready(function(){
  });
  $('#image_form').submit(function(event){
   event.preventDefault();
+  
   var image_name = $('#image').val();
   if(image_name == '')
   {
