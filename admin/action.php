@@ -1,5 +1,4 @@
 <?php
-//action.php
 if(isset($_POST["action"]))
 {
  $connect = mysqli_connect("localhost", "root", "", "samcarrecmsam");
@@ -38,13 +37,6 @@ if(isset($_POST["action"]))
 
  if($_POST["action"] == "insert")
   {
-//   $file = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));
-//   $query = "INSERT INTO piscine(url_piscine) VALUES ('$file')";
-//   if(mysqli_query($connect, $query))
-//   {
-//    echo 'Image Inserted into Database';
-//   }
-//  
     if(isset($_FILES["image"]["type"]))
     {
         $validextensions = array("jpeg", "jpg", "png");
@@ -67,29 +59,14 @@ if(isset($_POST["action"]))
         $sourcePath = $_FILES['image']['tmp_name']; // Storing source path of the file in a variable
         $targetPath = "../images/piscine/".$_FILES['image']['name']; // Target path where file is to be stored
         move_uploaded_file($sourcePath,$targetPath) ; // Moving Uploaded file
-        // echo "<span id='success'>Image Bien Envoyée...!!</span><br/>";
-        // echo "<br/><b>File Name:</b> " . $_FILES["image"]["name"] . "<br>";
-        // echo "<b>Type:</b> " . $_FILES["image"]["type"] . "<br>";
-        // echo "<b>Size:</b> " . ($_FILES["image"]["size"] / 1024) . " kB<br>";
-        // echo "<b>Temp file:</b> " . $_FILES["image"]["tmp_name"] . "<br>";
+        
+        $doc = "/images/piscine/" . ($_FILES['image']['name']);
 
-            $doc = "/images/piscine/" . ($_FILES['image']['name']);
-
-                
-                
-                
-                            
-        //$result = mysqli_connect($host,$uname,$pwd) or die("Could not connect to database." .mysqli_error());
-                //mysqli_select_db($connect, $query) or die("Could not select the databse." .mysqli_error());
-                
-                $query = "INSERT INTO piscine(url_piscine) VALUES ('$doc')";
-                if(mysqli_query($connect, $query))
-                //   $file = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));
-                //   $query = "INSERT INTO piscine(url_piscine) VALUES ('$file')";
-                //   if(mysqli_query($connect, $query))
-                {
-                echo 'Image Inserted into Database';
-                }
+        $query = "INSERT INTO piscine(url_piscine) VALUES ('$doc')";
+        if(mysqli_query($connect, $query))
+        {
+        echo 'Image Inserted into Database';
+        }
 
         }
     }
