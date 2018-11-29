@@ -37,6 +37,7 @@ if(isset($_POST["action"]))
 
  if($_POST["action"] == "insert")
   {
+    //insert de l'image
     if(isset($_FILES["image"]["type"]))
     {
         $validextensions = array("jpeg", "jpg", "png");
@@ -76,7 +77,8 @@ if(isset($_POST["action"]))
     echo "<span id='invalid'>***Invalid file Size or Type***<span>";
     }
     }
-
+    //insert du prix
+    
     
     }
     if($_POST["action"] == "update")
@@ -90,20 +92,24 @@ if(isset($_POST["action"]))
     }
     if($_POST["action"] == "delete")
     {
+      //enlever le fichier du repertoire
+      $query = "SELECT url_piscine FROM piscine WHERE id = '".$_POST["image_id"]."'" ;
+      $result = mysqli_query($connect, $query);
+      while ($row = $result->fetch_assoc()) {
+        //$row['url_piscine']."";
+        unlink(".." .$row['url_piscine']."");
+    }  
+      //enleve la photo de la base
       $query = "DELETE FROM piscine WHERE id = '".$_POST["image_id"]."'";
       if(mysqli_query($connect, $query))
       {
       echo 'Image Deleted from Database';
       }
 
-
-
-
-
-
-
-
+ 
 
     }
 }
+
+
 ?>
