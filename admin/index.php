@@ -47,7 +47,7 @@
      <input type="file" name="image" id="image" /></p><br />
      <input type="hidden" name="action" id="action" value="insert" />
      <p><label>Prix</label><br>
-		<input type="number"  step="0.01" name="prix" id="prix"/>
+		<input type="number"   name="prix" id="prix"/> 
         <span> €</span><br><br>
      <input type="hidden" name="image_id" id="image_id" />
      <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-info" />
@@ -108,13 +108,14 @@ $(document).ready(function(){
    else
    {
     var prix_name = $('#prix').val();
-    if (jQuery.isNumeric(prix_name)
+    if(!jQuery.isnumeric(prix_name))
     {
      alert("Montant Invalide");
      $('#prix').val('');
      return false;
     }
-
+    else
+    {
     $.ajax({
      url:"action.php",
      method:"POST",

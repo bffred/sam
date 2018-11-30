@@ -20,7 +20,7 @@ body a{
 }
 .header-left{
 	float:left;
-	width: 80%;
+	width: 100%;
 }
 .logo{
 	float:left;
@@ -981,10 +981,7 @@ li.youtube a span {
 .copy p a{
 	color:#fff;
 }
-.footer_bottom{
-	padding: 0 2%;
-	margin-top: 5%;
-}
+
 /*--shop--*/
 .shop_top{
 	padding:5% 0;

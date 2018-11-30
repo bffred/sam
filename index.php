@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Random</title>
+<title>Sam Carrelage : le roi du carrelage</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -49,7 +49,7 @@
 </head>
 <body>
 	<div class="header">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="row">
 			  <div class="col-md-12">
 				 <div class="header-left">
@@ -67,8 +67,6 @@
 								<li><a href="SolInt.php">Sol Interieur</a></li>
 								<li><a href="SolExt.php">Sol Exterieur</a></li>
 								<li><a href="ColleJoints.php">Colle et Joints</a></li>
-								<li><a href="experiance.html">Events</a></li>
-								<li><a href="shop.html">Company</a></li>
 								<li><a href="contact.html">Contact</a></li>								
 								<div class="clear"></div>
 							</ul>
@@ -166,18 +164,13 @@
 		</div>
 	</div>
 	
-		<div class="footer">
-			<div class="container">
-				<div class="row">
-				</div>
-				<div class="row footer_bottom">
-				    <div class="copy">
+
+				    <div align="center">
 					   <p>All right reserved © <?php echo date('Y'); ?></p>
 					   <a>Contact</a>
 					   <a>Mentions Légales</a>
 					   <a>Conditions générales de ventes</a>
 		            
-			</div>
 		</div>
 </body>	
 </html>
