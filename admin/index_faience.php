@@ -17,7 +17,7 @@
     <li class="nav-item">
             <a class="nav-link active" href="index_faience.php">Faience</a>
         <li class="nav-item">
-            <a class="nav-link active" href="#">Piscine</a>
+            <a class="nav-link " href="index.php">Piscine</a>
         </li>
         <li class="nav-item">
             <a class="nav-link" href="#">Exterieur</a>
@@ -68,7 +68,7 @@ $(document).ready(function(){
  {
   var action = "fetch";
   $.ajax({
-   url:"action.php",
+   url:"action_faience.php",
    method:"POST",
    data:{action:action},
    success:function(data)
@@ -106,7 +106,7 @@ $(document).ready(function(){
    else
    {
     $.ajax({
-     url:"action.php",
+     url:"action_faience.php",
      method:"POST",
      data:new FormData(this),
      contentType:false,
@@ -135,7 +135,7 @@ $(document).ready(function(){
   if(confirm("Etes-vous vraiment sur de vouloir supprimer cet article"))
   {
    $.ajax({
-    url:"action.php",
+    url:"action_faience.php",
     method:"POST",
     data:{image_id:image_id, action:action},
     success:function(data)
