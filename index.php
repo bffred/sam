@@ -182,7 +182,10 @@
 				</div>
 				<div class="row footer_bottom">
 				    <div class="copy">
-			           <p>All right reserved © <?php echo date('Y'); ?> Sam le pompier</p>
+					   <p>All right reserved © <?php echo date('Y'); ?></p>
+					   <a>Contact</a>
+					   <a>Mentions Légales</a>
+					   <a>Conditions générales de ventes</a>
 		            
 			</div>
 		</div>
