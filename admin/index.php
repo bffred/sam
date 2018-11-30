@@ -18,7 +18,7 @@
             <a class="nav-link active" href="index_faience.php">Faience</a>
         <li class="nav-item">
             <a class="nav-link active" href="#">Piscine</a>
-        </li>
+        </li> 
         <li class="nav-item">
             <a class="nav-link" href="#">Exterieur</a>
         </li>
@@ -47,7 +47,8 @@
      <input type="file" name="image" id="image" /></p><br />
      <input type="hidden" name="action" id="action" value="insert" />
      <p><label>Prix</label><br>
-		<input /><span> €</span><br><br>
+		<input type="number"  step="0.01" name="prix" id="prix"/>
+        <span> €</span><br><br>
      <input type="hidden" name="image_id" id="image_id" />
      <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-info" />
     </form>
@@ -82,6 +83,7 @@ $(document).ready(function(){
   $('#image_form')[0].reset();
   $('.modal-title').text("Add Image");
   $('#image_id').val('');
+  $('#prix').val("Prix");
   $('#action').val('insert');
   $('#insert').val("Insert");
  });
@@ -105,6 +107,14 @@ $(document).ready(function(){
    }
    else
    {
+    var prix_name = $('#prix').val();
+    if (jQuery.isNumeric(prix_name)
+    {
+     alert("Montant Invalide");
+     $('#prix').val('');
+     return false;
+    }
+
     $.ajax({
      url:"action.php",
      method:"POST",
