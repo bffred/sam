@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-<title>Free Snow Bootstrap Website Template | Home :: w3layouts</title>
+<title>Random</title>
 <link href="css/bootstrap.css" rel='stylesheet' type='text/css' />
 <link href="css/style.css" rel='stylesheet' type='text/css' />
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -67,7 +67,6 @@
 								<li><a href="SolInt.php">Sol Interieur</a></li>
 								<li><a href="SolExt.php">Sol Exterieur</a></li>
 								<li><a href="ColleJoints.php">Colle et Joints</a></li>
-								<li><a href="/admin">Admin</a></li>
 								<li><a href="experiance.html">Events</a></li>
 								<li><a href="shop.html">Company</a></li>
 								<li><a href="contact.html">Contact</a></li>								
@@ -78,16 +77,6 @@
 					<div class="clear"></div>
 	    	    </div>
 	            <div class="header_right">
-	    		  <!-- start search-->
-				      <div class="search-box">
-							<div id="sb-search" class="sb-search">
-								<form>
-									<input class="sb-search-input" placeholder="Enter your search term..." type="search" name="search" id="search">
-									<input class="sb-search-submit" type="submit" value="">
-									<span class="sb-icon-search"> </span>
-								</form>
-							</div>
-						</div>
 						<!----search-scripts---->
 						<script src="js/classie.js"></script>
 						<script src="js/uisearch.js"></script>
@@ -183,7 +172,10 @@
 				</div>
 				<div class="row footer_bottom">
 				    <div class="copy">
-			           <p>All right reserved © <?php echo date('Y'); ?> Sam le pompier</p>
+					   <p>All right reserved © <?php echo date('Y'); ?></p>
+					   <a>Contact</a>
+					   <a>Mentions Légales</a>
+					   <a>Conditions générales de ventes</a>
 		            
 			</div>
 		</div>
