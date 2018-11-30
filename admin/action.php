@@ -2,7 +2,7 @@
 //action.php
 if(isset($_POST["action"]))
 {
- $connect = mysqli_connect("localhost", "root", "root", "samcarrecmsam");
+ $connect = mysqli_connect("localhost", "root", "", "samcarrecmsam");
  if($_POST["action"] == "fetch")
  {
   $query = "SELECT * FROM piscine ORDER BY id DESC"; //LIMIT 10
@@ -45,6 +45,7 @@ if(isset($_POST["action"]))
    echo 'Image ajouté';
   }
  }
+
  if($_POST["action"] == "update")
  {
   $file = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));
@@ -54,6 +55,7 @@ if(isset($_POST["action"]))
    echo 'Image modifié';
   }
  }
+
  if($_POST["action"] == "delete")
  {
   $query = "DELETE FROM piscine WHERE id = '".$_POST["image_id"]."'";
