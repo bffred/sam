@@ -75,6 +75,7 @@ $(document).ready(function(){
    success:function(data)
    {
     $('#image_data').html(data);
+    $('#prix_data').html(data);
    }
   })
  }
@@ -83,13 +84,15 @@ $(document).ready(function(){
   $('#image_form')[0].reset();
   $('.modal-title').text("Add Image");
   $('#image_id').val('');
-  $('#prix').val("Prix");
+  $('#prix').val('Insert');
   $('#action').val('insert');
   $('#insert').val("Insert");
  });
- $('#image_form').submit(function(event){
+
+ $('#image_form').submit(function(event)
+ {
   event.preventDefault();
-  
+  var prix =$('#prix').val();
   var image_name = $('#image').val();
   if(image_name == '')
   {
@@ -107,16 +110,7 @@ $(document).ready(function(){
    }
    else
    {
-    var prix_name = $('#prix').val();
-    if(!jQuery.isnumeric(prix_name))
-    {
-     alert("Montant Invalide");
-     $('#prix').val('');
-     return false;
-    }
-    else
-    {
-    $.ajax({
+   $.ajax({
      url:"action.php",
      method:"POST",
      data:new FormData(this),
@@ -137,6 +131,7 @@ $(document).ready(function(){
   $('#image_id').val($(this).attr("id"));
   $('#action').val("update");
   $('.modal-title').text("Changer Image");
+  $('#prix').val("insert")
   $('#insert').val("Update");
   $('#imageModal').modal("show");
  });

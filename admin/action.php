@@ -37,6 +37,7 @@ if(isset($_POST["action"]))
 
  if($_POST["action"] == "insert")
   {
+    //insert form image qui contient l'image et le prix   
     //insert de l'image
     if(isset($_FILES["image"]["type"]))
     {
@@ -61,9 +62,14 @@ if(isset($_POST["action"]))
         $targetPath = "../images/piscine/".$_FILES['image']['name']; // Target path where file is to be stored
         move_uploaded_file($sourcePath,$targetPath) ; // Moving Uploaded file
         
-        $doc = "/images/piscine/" . ($_FILES['image']['name']);
 
-        $query = "INSERT INTO piscine(url_piscine) VALUES ('$doc')";
+        //adresse de l'image à inscrire en bdd
+        $doc = "/images/piscine/" . ($_FILES['image']['name']);
+        
+        //insertion de la valeur du prix
+        $prix = $_POST['prix'];
+
+        $query = "INSERT INTO piscine(url_piscine, prix_piscine) VALUES ('$doc' , '$prix')";
         if(mysqli_query($connect, $query))
         {
         echo 'Image Inserted into Database';
@@ -77,18 +83,21 @@ if(isset($_POST["action"]))
     echo "<span id='invalid'>***Invalid file Size or Type***<span>";
     }
     }
-    //insert du prix
+    
     
     
     }
     if($_POST["action"] == "update")
     {
-      $file = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));
-      $query = "UPDATE piscine SET name = '$file' WHERE id = '".$_POST["image_id"]."'";
-      if(mysqli_query($connect, $query))
-      {
-      echo 'Image Updated into Database';
-      }
+      $prix = get_contents($_POST['prix']);
+      echo $prix;
+
+      // $file = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));
+      // $query = "UPDATE piscine SET name = '$file' WHERE id = '".$_POST["image_id"]."'";
+      // if(mysqli_query($connect, $query))
+      // {
+      // echo 'Image Updated into Database';
+      // }
     }
     if($_POST["action"] == "delete")
     {
