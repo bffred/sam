@@ -89,16 +89,96 @@ if(isset($_POST["action"]))
     }
     if($_POST["action"] == "update")
     {
-      $prix = get_contents($_POST['prix']);
-      echo $prix;
+      //update prix piscine
+      $prix = ($_POST['prix']);
+      //echo $prix;
+      //$file = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));
+      //echo $file;
+    //  $query = "UPDATE piscine SET prix_piscine = '$prix' WHERE id = '".$_POST['image_id']."'";
+    //  if(mysqli_query($connect, $query))
+    //  {
+    //  echo 'Prix Updated into Database';
+      }
 
-      // $file = addslashes(file_get_contents($_FILES["image"]["tmp_name"]));
-      // $query = "UPDATE piscine SET name = '$file' WHERE id = '".$_POST["image_id"]."'";
-      // if(mysqli_query($connect, $query))
-      // {
-      // echo 'Image Updated into Database';
-      // }
+      //update image
+       //reinsert de l'image
+    if(isset($_FILES["image"]["type"]))
+    {
+        $validextensions = array("jpeg", "jpg", "png");
+        $temporary = explode(".", $_FILES["image"]["name"]);
+        $file_extension = end($temporary);
+        if ((($_FILES["image"]["type"] == "image/png") || ($_FILES["image"]["type"] == "image/jpg") || ($_FILES["image"]["type"] == "image/jpeg")
+        ) && ($_FILES["image"]["size"] < 100000)//Approx. 100kb files can be uploaded.
+        && in_array($file_extension, $validextensions)) {
+        if ($_FILES["image"]["error"] > 0)
+        {
+        echo "Return Code: " . $_FILES["image"]["error"] . "<br/><br/>";
+        }
+        else
+        {
+        
+        
+        
+        if (file_exists("../images/piscine/" . $_FILES["image"]["name"])) 
+        {
+        //echo $_FILES["image"]["name"] . "  ! Erreur ! Cette image Existe déjà ! ";
+        unlink("../images/piscine/" .$_FILES["image"]["name"]); // On efface l'image existante
+        
+        }
+        else
+        
+
+        {
+        $sourcePath = $_FILES['image']['tmp_name']; // Storing source path of the file in a variable
+        $targetPath = "../images/piscine/".$_FILES['image']['name']; // Target path where file is to be stored
+        move_uploaded_file($sourcePath,$targetPath) ; // Moving Uploaded file
+        
+
+
+
+        //adresse de l'image à reinscrire en bdd
+        $updatedoc = "/images/piscine/" . ($_FILES['image']['name']);
+          
+        
+        //
+        //insertion de la valeur du prix
+        //$prix = $_POST['prix'];
+        //
+
+
+        //$query = "INSERT INTO piscine(url_piscine, prix_piscine) VALUES ('$updatedoc' , '$prix')";
+        //if(mysqli_query($connect, $query))
+        //{
+        //echo 'Image Inserted into Database';
+        //}
+        
+        $query = "UPDATE piscine SET prix_piscine = '$prix' , url_piscine = '$updatedoc' WHERE id = '".$_POST['image_id']."'";
+        if(mysqli_query($connect, $query))
+        {
+        echo 'Image et Prix Updated into Database';
+        }}}}}
+      
+        
+      
+
+
+
+
     }
+    
+    else
+    {
+    echo "<span id='invalid'>***Invalid file Size or Type***<span>";
+    }
+    
+    //FIN UPDATE IMAGE
+
+
+
+
+
+
+    
     if($_POST["action"] == "delete")
     {
       //enlever le fichier du repertoire
@@ -117,7 +197,7 @@ if(isset($_POST["action"]))
 
  
 
-    }
+    
 }
 
 
