@@ -1,8 +1,8 @@
 <?php
 if(isset($_POST["action"]))
 {
-  //$connect = mysqli_connect("samcarrecmsam.mysql.db", "samcarrecmsam", "4Carrelage", "samcarrecmsam");
-  $connect = mysqli_connect("localhost", "root", "", "samcarrecmsam");
+  $connect = mysqli_connect("samcarrecmsam.mysql.db", "samcarrecmsam", "4Carrelage", "samcarrecmsam");
+  //$connect = mysqli_connect("localhost", "root", "", "samcarrecmsam");
  if($_POST["action"] == "fetch")
  {
   $query = "SELECT * FROM piscine ORDER BY id DESC"; //LIMIT 10
@@ -46,7 +46,7 @@ if(isset($_POST["action"]))
         $temporary = explode(".", $_FILES["image"]["name"]);
         $file_extension = end($temporary);
         if ((($_FILES["image"]["type"] == "image/png") || ($_FILES["image"]["type"] == "image/jpg") || ($_FILES["image"]["type"] == "image/jpeg")
-        ) && ($_FILES["image"]["size"] < 100000)//Approx. 100kb files can be uploaded.
+        ) && ($_FILES["image"]["size"] < 2000000)//Approx. 2000kb files can be uploaded.
         && in_array($file_extension, $validextensions)) {
         if ($_FILES["image"]["error"] > 0)
         {
@@ -111,7 +111,7 @@ if(isset($_POST["action"]))
         $temporary = explode(".", $_FILES["image"]["name"]);
         $file_extension = end($temporary);
         if ((($_FILES["image"]["type"] == "image/png") || ($_FILES["image"]["type"] == "image/jpg") || ($_FILES["image"]["type"] == "image/jpeg")
-        ) && ($_FILES["image"]["size"] < 100000)//Approx. 100kb files can be uploaded.
+        ) && ($_FILES["image"]["size"] < 2000000)//Approx. 2000kb files can be uploaded.
         && in_array($file_extension, $validextensions)) 
         {
         if ($_FILES["image"]["error"] > 0)
