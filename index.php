@@ -59,7 +59,7 @@
 						<div class="menu">
 							<a class="toggleMenu" href="#"><img src="images/nav.png" alt="" /></a>
 							<ul class="nav" id="nav">
-								<li class="current"><a href="index.php">Home</a></li>
+								<li class="current"><a href="index.php">Accueil</a></li>
 								<li><a href="Faience.php">Faience</a></li>
 								<li><a href="Mosaique.php">Mosaique</a></li>
 								<li><a href="Piscine.php">Piscine</a></li>
@@ -67,7 +67,7 @@
 								<li><a href="SolInt.php">Sol Interieur</a></li>
 								<li><a href="SolExt.php">Sol Exterieur</a></li>
 								<li><a href="ColleJoints.php">Colle et Joints</a></li>
-								<li><a href="contact.html">Contact</a></li>								
+								<li><a href="mailto:maya.2111@live.fr?subject=Via le site www.sam-carrelage.com">Contact</a></li>								
 								<div class="clear"></div>
 							</ul>
 							<script type="text/javascript" src="js/responsive-nav.js"></script>
@@ -101,7 +101,7 @@
                 <div class="slide_content">
                     <div class="slide_content_wrap">
                         <!-- Text title -->
-                        <h1 class="title">Run Over<br>Everything</h1>
+                        <h1 class="title">Livraison OFFERTE à partir de 500 €</h1>
                     </div>
                 </div>
                <!-- /Texts container -->
@@ -111,7 +111,7 @@
                <img src="images/slider2.jpg" class="img-responsive" alt=""/>
                 <div class="slide_content">
                     <div class="slide_content_wrap">
-                        <h1 class="title">Run Over<br>Everything</h1>
+                        <h1 class="title">Livraison OFFERTE à partir de 500 €</h1>
                     </div>
                 </div>
             </div>
@@ -164,12 +164,11 @@
 		</div>
 	</div>
 	
-
 				    <div align="center">
 					   <p>All right reserved © <?php echo date('Y'); ?></p>
-					   <a>Contact</a>
-					   <a>Mentions Légales</a>
-					   <a>Conditions générales de ventes</a>
+					   <a href="mailto:maya.2111@live.fr?subject=Via le site www.sam-carrelage.com">Contact</a>
+					   <a href="legal.php">Mentions Légales</a>
+					   <a href="cg.php">Conditions générales de vente</a>
 		            
 		</div>
 </body>	

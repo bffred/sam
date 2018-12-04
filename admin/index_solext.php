@@ -14,8 +14,8 @@
    <div align="right">
     <button type="button" name="add" id="add" class="btn btn-success">Ajouter</button>
         <ul class="nav nav-tabs">
-            <li class="nav-item">
-                    <a class="nav-link active" href="index.php">Faience</a>
+        <li class="nav-item">
+                    <a class="nav-link" href="index.php">Faience</a>
                 <li class="nav-item">
                     <a class="nav-link" href="index_mosaique.php">Mosaique</a>
                 </li> 
@@ -29,7 +29,7 @@
                     <a class="nav-link" href="index_solint.php">Sol Intérieur</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="index_solext.php">Sol Extérieur</a>
+                    <a class="nav-link active" href="index_solext.php">Sol Extérieur</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="index_collejoints.php">Colle et Joints</a>
@@ -82,7 +82,7 @@ $(document).ready(function(){
  {
   var action = "fetch";
   $.ajax({
-   url:"action.php",
+   url:"action_solext.php",
    method:"POST",
    data:{action:action},
    success:function(data)
@@ -124,7 +124,7 @@ $(document).ready(function(){
    else
    {
    $.ajax({
-     url:"action.php",
+     url:"action_solext.php",
      method:"POST",
      data:new FormData(this),
      contentType:false,
@@ -154,7 +154,7 @@ $(document).ready(function(){
   if(confirm("Etes-vous vraiment sur de vouloir supprimer cet article"))
   {
    $.ajax({
-    url:"action.php",
+    url:"action_solext.php",
     method:"POST",
     data:{image_id:image_id, action:action},
     success:function(data)

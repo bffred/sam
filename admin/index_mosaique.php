@@ -14,10 +14,10 @@
    <div align="right">
     <button type="button" name="add" id="add" class="btn btn-success">Ajouter</button>
         <ul class="nav nav-tabs">
-            <li class="nav-item">
-                    <a class="nav-link active" href="index.php">Faience</a>
+        <li class="nav-item">
+                    <a class="nav-link" href="index.php">Faience</a>
                 <li class="nav-item">
-                    <a class="nav-link" href="index_mosaique.php">Mosaique</a>
+                    <a class="nav-link active" href="index_mosaique.php">Mosaique</a>
                 </li> 
                 <li class="nav-item">
                     <a class="nav-link" href="index_piscine.php">Piscine</a>
@@ -82,7 +82,7 @@ $(document).ready(function(){
  {
   var action = "fetch";
   $.ajax({
-   url:"action.php",
+   url:"action_mosaique.php",
    method:"POST",
    data:{action:action},
    success:function(data)
@@ -124,7 +124,7 @@ $(document).ready(function(){
    else
    {
    $.ajax({
-     url:"action.php",
+     url:"action_mosaique",
      method:"POST",
      data:new FormData(this),
      contentType:false,
@@ -154,7 +154,7 @@ $(document).ready(function(){
   if(confirm("Etes-vous vraiment sur de vouloir supprimer cet article"))
   {
    $.ajax({
-    url:"action.php",
+    url:"action_mosaique",
     method:"POST",
     data:{image_id:image_id, action:action},
     success:function(data)

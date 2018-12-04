@@ -5,7 +5,7 @@ if(isset($_POST["action"]))
   $connect = mysqli_connect("localhost", "root", "", "samcarrecmsam");
  if($_POST["action"] == "fetch")
  {
-  $query = "SELECT * FROM faience ORDER BY id DESC"; //LIMIT 10
+  $query = "SELECT * FROM sol_interieur ORDER BY id DESC"; //LIMIT 10
   $result = mysqli_query($connect, $query);
   $output = '
    <table class="table table-bordered table-striped">  
@@ -20,13 +20,12 @@ if(isset($_POST["action"]))
   while($row = mysqli_fetch_array($result))
   {
    $output .= '
-
     <tr>
      <td>'.$row["id"].'</td>
      <td>
-      <img src="../'.($row['url_faience'] ).'" class="img-thumbnail" height="60" width="75"/> 
+      <img src="../'.($row['url_sol_int'] ).'" class="img-thumbnail" height="60" width="75"/> 
      </td>
-     <td> ' .$row['prix_faience'].'</td>
+     <td> ' .$row['prix_sol_int'].'</td>
      <td><button type="button" name="update" class="btn btn-warning bt-xs update" id="'.$row["id"].'">Change</button></td>
      <td><button type="button" name="delete" class="btn btn-danger bt-xs delete" id="'.$row["id"].'">Remove</button></td>
     </tr>
@@ -54,23 +53,23 @@ if(isset($_POST["action"]))
         }
         else
         {
-        if (file_exists("../images/carrelage/mural" . $_FILES["image"]["name"])) {
+        if (file_exists("../images/carrelage/sol_interieur" . $_FILES["image"]["name"])) {
         echo $_FILES["image"]["name"] . "  ! Erreur ! Cette image Existe déjà ! ";
         }
         else
         {
         $sourcePath = $_FILES['image']['tmp_name']; // Storing source path of the file in a variable
-        $targetPath = "../images/carrelage/mural".$_FILES['image']['name']; // Target path where file is to be stored
+        $targetPath = "../images/carrelage/sol_interieur".$_FILES['image']['name']; // Target path where file is to be stored
         move_uploaded_file($sourcePath,$targetPath) ; // Moving Uploaded file
         
 
         //adresse de l'image à inscrire en bdd
-        $doc = "/images/carrelage/mural" . ($_FILES['image']['name']);
+        $doc = "/images/carrelage/sol_interieur" . ($_FILES['image']['name']);
         
         //insertion de la valeur du prix
         $prix = $_POST['prix'];
 
-        $query = "INSERT INTO faience(url_faience, prix_faience) VALUES ('$doc' , '$prix')";
+        $query = "INSERT INTO sol_interieur(url_sol_int, prix_sol_int) VALUES ('$doc' , '$prix')";
         if(mysqli_query($connect, $query))
         {
         echo 'Image et prix Inserted into Database';
@@ -98,12 +97,12 @@ if(isset($_POST["action"]))
       if(isset($_FILES["image"]["type"]))
       {
         
-        $query = "SELECT url_faience FROM faience WHERE id = '".$_POST["image_id"]."'" ;
+        $query = "SELECT url_sol_int FROM sol_interieur WHERE id = '".$_POST["image_id"]."'" ;
         $result = mysqli_query($connect, $query);
           while ($row = $result->fetch_assoc())
           {
-          $row['url_faience']."";
-           unlink(".." .$row['url_faience']."");
+          $row['url_sol_int']."";
+           unlink(".." .$row['url_sol_int']."");
           }
                
         
@@ -121,43 +120,43 @@ if(isset($_POST["action"]))
           else
           { 
                 
-          if (file_exists("../images/carrelage/mural" . $_FILES["image"]["name"])) 
+          if (file_exists("../images/carrelage/sol_interieur" . $_FILES["image"]["name"])) 
           {
           echo $_FILES["image"]["name"] . "  ! Erreur ! Cette image Existe déjà ! ";
           }
           else
           {
           $sourcePath = $_FILES['image']['tmp_name']; // Storing source path of the file in a variable
-          $targetPath = "../images/carrelage/mural".$_FILES['image']['name']; // Target path where file is to be stored
+          $targetPath = "../images/carrelage/sol_interieur".$_FILES['image']['name']; // Target path where file is to be stored
           move_uploaded_file($sourcePath,$targetPath) ; // Moving Uploaded file
           
           //adresse de l'image à reinscrire en bdd
-          $updatedoc = "/images/carrelage/mural" . ($_FILES['image']['name']);
-            
-                    
-          $query = "UPDATE faience SET prix_faience = '$prix' , url_faience = '$updatedoc' WHERE id = '".$_POST['image_id']."'";
+          $updatedoc = "/images/carrelage/sol_interieur" . ($_FILES['image']['name']);               
+          $query = "UPDATE sol_interieur SET prix_sol_int = '$prix' , url_sol_int = '$updatedoc' WHERE id = '".$_POST['image_id']."'";
           if(mysqli_query($connect, $query))
           {
           echo 'Image et Prix Updated into Database';
           }
         }
+       
       }
-      }
-      } 
-      }
+      // else
+      // {
+      // echo "<span id='invalid'>***Invalid file Size or Type***<span>";
+      }}}
       
       //FIN UPDATE IMAGE
     }
     if($_POST["action"] == "delete")
     {
       //enlever le fichier du repertoire
-      $query = "SELECT url_faience FROM faience WHERE id = '".$_POST["image_id"]."'" ;
+      $query = "SELECT url_sol_int FROM sol_interieur WHERE id = '".$_POST["image_id"]."'" ;
       $result = mysqli_query($connect, $query);
       while ($row = $result->fetch_assoc()) {
-        unlink(".." .$row['url_faience']."");
+        unlink(".." .$row['url_sol_int']."");
       
       //enlever la photo de la base
-      $query = "DELETE FROM faience WHERE id = '".$_POST["image_id"]."'";
+      $query = "DELETE FROM sol_interieur WHERE id = '".$_POST["image_id"]."'";
       if(mysqli_query($connect, $query))
       {
       echo 'Image Deleted from Database';

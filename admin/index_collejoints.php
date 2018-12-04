@@ -13,20 +13,31 @@
    <br />
    <div align="right">
     <button type="button" name="add" id="add" class="btn btn-success">Ajouter</button>
-    <ul class="nav nav-tabs">
-    <li class="nav-item">
-            <a class="nav-link active" href="index_faience.php">Faience</a>
+        <ul class="nav nav-tabs">
         <li class="nav-item">
-            <a class="nav-link " href="index.php">Piscine</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Exterieur</a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#">Interieur</a>
-        </li>
-        </ul>
+                    <a class="nav-link" href="index.php">Faience</a>
+                <li class="nav-item">
+                    <a class="nav-link" href="index_mosaique.php">Mosaique</a>
+                </li> 
+                <li class="nav-item">
+                    <a class="nav-link" href="index_piscine.php">Piscine</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index_sdbain.php">Salle de Bain</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index_solint.php">Sol Intérieur</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="index_solext.php">Sol Extérieur</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="index_collejoints.php">Colle et Joints</a>
+                </li>
+            </li> 
+        </ul>        
    </div>
+   
    <br />
    <div id="image_data">
 
@@ -47,7 +58,8 @@
      <input type="file" name="image" id="image" /></p><br />
      <input type="hidden" name="action" id="action" value="insert" />
      <p><label>Prix</label><br>
-		<input /><span> €</span><br><br>
+		<input type="number"   name="prix" id="prix"/> 
+        <span> €</span><br><br>
      <input type="hidden" name="image_id" id="image_id" />
      <input type="submit" name="insert" id="insert" value="Insert" class="btn btn-info" />
     </form>
@@ -59,7 +71,9 @@
  </div>
 </div>
  
-<script>  
+<script> 
+
+
 $(document).ready(function(){
  
  fetch_data();
@@ -68,12 +82,13 @@ $(document).ready(function(){
  {
   var action = "fetch";
   $.ajax({
-   url:"action_faience.php",
+   url:"action_collejoints.php",
    method:"POST",
    data:{action:action},
    success:function(data)
    {
     $('#image_data').html(data);
+    $('#prix_data').html(data);
    }
   })
  }
@@ -82,12 +97,15 @@ $(document).ready(function(){
   $('#image_form')[0].reset();
   $('.modal-title').text("Add Image");
   $('#image_id').val('');
+  $('#prix').val('Insert');
   $('#action').val('insert');
   $('#insert').val("Insert");
  });
- $('#image_form').submit(function(event){
+
+ $('#image_form').submit(function(event)
+ {
   event.preventDefault();
-  
+  var prix =$('#prix').val();
   var image_name = $('#image').val();
   if(image_name == '')
   {
@@ -105,8 +123,8 @@ $(document).ready(function(){
    }
    else
    {
-    $.ajax({
-     url:"action_faience.php",
+   $.ajax({
+     url:"action_collejoints.php",
      method:"POST",
      data:new FormData(this),
      contentType:false,
@@ -126,6 +144,7 @@ $(document).ready(function(){
   $('#image_id').val($(this).attr("id"));
   $('#action').val("update");
   $('.modal-title').text("Changer Image");
+  $('#prix').val("insert")
   $('#insert').val("Update");
   $('#imageModal').modal("show");
  });
@@ -135,7 +154,7 @@ $(document).ready(function(){
   if(confirm("Etes-vous vraiment sur de vouloir supprimer cet article"))
   {
    $.ajax({
-    url:"action_faience.php",
+    url:"action_collejoints.php",
     method:"POST",
     data:{image_id:image_id, action:action},
     success:function(data)
