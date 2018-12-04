@@ -1,8 +1,8 @@
 <?php
+include('../db.php');
 if(isset($_POST["action"]))
 {
-  //$connect = mysqli_connect("samcarrecmsam.mysql.db", "samcarrecmsam", "4Carrelage", "samcarrecmsam");
-  $connect = mysqli_connect("localhost", "root", "", "samcarrecmsam");
+
  if($_POST["action"] == "fetch")
  {
   $query = "SELECT * FROM mosaique ORDER BY id DESC"; //LIMIT 10
@@ -14,7 +14,7 @@ if(isset($_POST["action"]))
      <th width="70%">Image</th>
      <th width="70%">Prix</th>
      <th width="10%">Modifier</th>
-     <th width="10%">Remove</th>
+     <th width="10%">Supprimer</th>
     </tr>
   ';
   while($row = mysqli_fetch_array($result))

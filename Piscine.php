@@ -1,9 +1,3 @@
-<!--A Design by W3layouts
-Author: W3layout
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -90,20 +84,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	  </div>
 	  <div class="border">
 	  <?php
-
-        // $host ="samcarrecmsam.mysql.db";
-        // $uname = "samcarrecmsam";
-        // $pwd = '4Carrelage';
-        // $db_name = "samcarrecmsam";
-
-        $host ="localhost";
-        $uname = "root";
-        $pwd = '';
-        $db_name = "samcarrecmsam";
-
-        $result = mysqli_connect($host,$uname,$pwd) or die("Could not connect to database." .mysqli_error());
-        mysqli_select_db($result,$db_name) or die("Could not select the databse." .mysqli_error());
-        $image_query = mysqli_query($result,"select url_piscine, prix_piscine from piscine");
+	  	include('db.php');
+        $image_query = mysqli_query($connect,"select url_piscine, prix_piscine from piscine");
         while($rows = mysqli_fetch_array($image_query))
         {
             $img_prix = $rows['prix_piscine'];

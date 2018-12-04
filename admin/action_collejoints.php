@@ -1,8 +1,8 @@
 <?php
+include('../db.php');
 if(isset($_POST["action"]))
 {
-  //$connect = mysqli_connect("samcarrecmsam.mysql.db", "samcarrecmsam", "4Carrelage", "samcarrecmsam");
-  $connect = mysqli_connect("localhost", "root", "", "samcarrecmsam");
+
  if($_POST["action"] == "fetch")
  {
   $query = "SELECT * FROM collejoints ORDER BY id DESC"; //LIMIT 10
@@ -26,7 +26,7 @@ if(isset($_POST["action"]))
       <img src="../'.($row['url_collejoints'] ).'" class="img-thumbnail" height="60" width="75"/> 
      </td>
      <td> ' .$row['prix_collejoints'].'</td>
-     <td><button type="button" name="update" class="btn btn-warning bt-xs update" id="'.$row["id"].'">Change</button></td>
+     <td><button type="button" name="update" class="btn btn-warning bt-xs update" id="'.$row["id"].'">Modifier</button></td>
      <td><button type="button" name="delete" class="btn btn-danger bt-xs delete" id="'.$row["id"].'">Supprimer</button></td>
     </tr>
    ';

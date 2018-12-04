@@ -35,7 +35,8 @@
                     <a class="nav-link" href="index_collejoints.php">Colle et Joints</a>
                 </li>
             </li> 
-        </ul>        
+        </ul>
+              
    </div>
    
    <br />

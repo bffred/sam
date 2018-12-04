@@ -1,8 +1,8 @@
 <?php
+include('../db.php');
 if(isset($_POST["action"]))
 {
-  //$connect = mysqli_connect("samcarrecmsam.mysql.db", "samcarrecmsam", "4Carrelage", "samcarrecmsam");
-  $connect = mysqli_connect("localhost", "root", "", "samcarrecmsam");
+
  if($_POST["action"] == "fetch")
  {
   $query = "SELECT * FROM piscine ORDER BY id DESC"; //LIMIT 10

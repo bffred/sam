@@ -84,22 +84,9 @@
 	  </div>
 	  <div class="border">
 	  <?php
+		include('db.php');
 
-        // $host ="samcarrecmsam.mysql.db";
-        // $uname = "samcarrecmsam";
-        // $pwd = '4Carrelage';
-        // $db_name = "samcarrecmsam";
-
-        $host ="localhost";
-        $uname = "root";
-        $pwd = '';
-        $db_name = "samcarrecmsam";
-
-					
-        $result = mysqli_connect($host,$uname,$pwd) or die("Could not connect to database." .mysqli_error());
-        mysqli_select_db($result , $db_name) or die("Could not select the databse." .mysqli_error());
-		
-		$image_query = mysqli_query($result,"select url_faience, prix_faience from faience");
+		$image_query = mysqli_query($connect,"select url_faience, prix_faience from faience");
         while($rows = mysqli_fetch_array($image_query))
         {
             $img_prix = $rows['prix_faience'];
