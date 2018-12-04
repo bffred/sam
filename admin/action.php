@@ -13,8 +13,8 @@ if(isset($_POST["action"]))
      <th width="10%">ID</th>
      <th width="70%">Image</th>
      <th width="70%">Prix</th>
-     <th width="10%">Change</th>
-     <th width="10%">Remove</th>
+     <th width="10%">Modifier</th>
+     <th width="10%">Supprimer</th>
     </tr>
   ';
   while($row = mysqli_fetch_array($result))
@@ -27,8 +27,8 @@ if(isset($_POST["action"]))
       <img src="../'.($row['url_faience'] ).'" class="img-thumbnail" height="60" width="75"/> 
      </td>
      <td> ' .$row['prix_faience'].'</td>
-     <td><button type="button" name="update" class="btn btn-warning bt-xs update" id="'.$row["id"].'">Change</button></td>
-     <td><button type="button" name="delete" class="btn btn-danger bt-xs delete" id="'.$row["id"].'">Remove</button></td>
+     <td><button type="button" name="update" class="btn btn-warning bt-xs update" id="'.$row["id"].'">Modifier</button></td>
+     <td><button type="button" name="delete" class="btn btn-danger bt-xs delete" id="'.$row["id"].'">Supprimer</button></td>
     </tr>
    ';
   }
