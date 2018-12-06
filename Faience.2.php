@@ -43,8 +43,7 @@
 	  
 	  	<?php
 		include('db.php');
-		
-		$limit = 5;  // nombre d'article par page
+		$limit = 10;  // nombre d'article par page
 		if (isset($_GET["page"])) { $page  = $_GET["page"]; } else { $page=1; };  
 		$start_from = ($page-1) * $limit; 
 		$image_query = mysqli_query($connect,"SELECT id, url_faience, prix_faience FROM faience ORDER BY id DESC LIMIT $start_from, $limit");				
@@ -88,75 +87,20 @@
 		<?php		
 		}
 		?>
-</body>
-		
 		<?php  
 			$sql = "SELECT COUNT(id) FROM faience";  
 			$rs_result = mysqli_query($connect, $sql);  
 			$row = mysqli_fetch_array($rs_result);  
-			$total_records = $row[0]; 
-			/* On calcule le nombre de pages */ 
+			$total_records = $row[0];  
 			$total_pages = ceil($total_records / $limit);  
-			//$pagLink = "<div class='breadcrumb'>";  
-			//for ($i=1; $i<=$total_pages; $i++) {  
-						
-				//$pagLink .= "<li><a href='Faience.php?page=".$i."'>".$i."</a></li>";  
-						
-			//};  
-			//echo $pagLink;
-			
+			$pagLink = "<div class='pagination'>";  
+			for ($i=1; $i<=$total_pages; $i++) {  
+						$pagLink .= "<li><a href='Faience.php?page=".$i."'>".$i."</a></li>";  
+			};  
+			echo $pagLink . "</div>";  
 		?>
-		</div>
-		<ul class="pager">							
-			<li class="previous">
-				<?php 
-				if ($page > 1):?><a href="?page=<?php echo $page - 1; ?>">Page précédente</a> —Sam The King— <?php
-				endif;	
-				?>
-			</li>
-				<li>
-					<?php
-					for ($i = 1; $i <= $total_pages; $i++):
-					?><a href="?page=<?php echo $i; ?>"><?php echo $i; ?></a> <?php
-					endfor;
-					?>
-				</li>		
-			<li class="next">
-				<?php 
-				if ($page < $total_pages):
-				?>—Sam The King—<a href="?page=<?php echo $page + 1; ?>">Page suivante</a><?php
-				endif;
-				?>				
-			</li>
-		</ul>		
 		
-
-
-
-		<ul class='pagination'>	
-			<?php
-			/* Si on est sur la première page, on n'a pas besoin d'afficher de lien
-			* vers la précédente. On va donc l'afficher que si on est sur une autre
-			* page que la première */
-
-				if ($page > 1):
-				?><li class="previous"><a  href="?page=<?php echo $page - 1; ?>">Page précédente</a></li><?php
-				endif;
-
-			/* On va effectuer une boucle autant de fois que l'on a de pages */
-				for ($i = 1; $i <= $total_pages; $i++):
-				?><li><a href="?page=<?php echo $i; ?>"><?php echo $i; ?></a> </li><?php
-				endfor;
-
-			/* Avec le nombre total de pages, on peut aussi masquer le lien
-			* vers la page suivante quand on est sur la dernière */
-				if ($page < $total_pages):
-				?><li class="next"><a href="?page=<?php echo $page + 1; ?>">Page suivante</a></li><?php
-				endif;
-			?>
-		</ul>
-
-		
+</body>	
 	<br><br><br>
 	<div align="center">
 		<p>All right reserved © <?php echo date('Y'); ?></p>
